@@ -20,19 +20,21 @@ const HeroSection = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary-400 to-secondary-600">
               Hello, I&apos;m{" "}
             </span>
-            <TypeAnimation
-              sequence={[
-                "Aniket Dhiman",
-                1000,
-                "Frontend Developer",
-                1000,
-                "Backend Developer",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+            <div className="h-[100px] sm:h-auto">
+              <TypeAnimation
+                sequence={[
+                  "Aniket Dhiman",
+                  1000,
+                  "Frontend Developer",
+                  1000,
+                  "Backend Developer",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </div>
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             A Full-stack developer specializing in building optimized, scalable
