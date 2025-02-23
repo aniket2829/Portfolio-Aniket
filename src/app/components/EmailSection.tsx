@@ -9,15 +9,14 @@ const EmailSection = () => {
 
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+    const formData = new FormData(e.currentTarget);
     const data = {
-      email: e.target.elements.email.value,
-      subject: e.target.elements.subject.value,
-      message: e.target.elements.message.value,
+      email: formData.get("email") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
     };
-  
     console.log("Sending Data:", data);
   
     const response = await fetch("/api/send-email", {
