@@ -14,13 +14,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="place-self-center text-center sm:text-left w-3/5 justify-self-start"
+          className="place-self-center text-left sm:w-3/5 w-4/5 justify-self-start"
         >
-          <h1 className="text-white mb-4 text-4xl xl:text-5xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+          <h1 className="text-white mb-4 text-5xl xl:text-5xl lg:leading-normal font-extrabold flex flex-col gap-3">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary-400 to-secondary-600">
               Hello, I&apos;m{" "}
             </span>
-            <br className="pb-3"></br>
             <TypeAnimation
               sequence={[
                 "Aniket Dhiman",
