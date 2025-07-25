@@ -2,22 +2,33 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
+const resendEmail = process.env.RESEND_EMAIL
+const fromEmail = process.env.FROM_EMAIL
+console.log('FROM_EMAIL:', fromEmail);
 
 export async function POST(req) {
   try {
     const { email, subject, message } = await req.json();
-    
-    console.log("Received request:", email, subject, message);
 
     const data = await resend.emails.send({
-      from: fromEmail,
-      to: [fromEmail, email],
+      from: resendEmail,
+      to: [fromEmail],
       subject: subject,
       html: `
-        <h1>${subject}</h1>
-        <p>Thank you for contacting us!</p>
-        <p>New message submitted:</p>
+        <style>
+          * {
+            font-family: Arial, sans-serif;
+          }
+          p {
+            margin: 0.5rem 0;
+          }
+          a {
+            color: #1890ff;
+            text-decoration: none;
+          }
+        </style>
+        <h1 style="font-weight: bold; font-size: 1.5rem;">${subject}</h1>
+        <p>Message from: <a href="mailto:${email}">${email}</a></p>
         <p>${message}</p>
       `,
     });

@@ -4,18 +4,31 @@ import Image from "next/image";
 import TabButton from "./TabButton";
 import MyPicture from "../../assets/MyPicture.jpg"
 
+const skill = [
+    "React.js",
+    "Next.js",
+    "Tailwind CSS",
+    "Node.js",
+    "PostgreSQL",
+    "MYSQL",
+    "AWS LAmbda",
+    "Redis",
+    "RabbitMQ"
+]
+
+const education = [
+    "Chandigarh Group of Colleges: B.Tech CSE",
+]
+
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2 flex gap-2 flex-col">
-        <li>React.js</li>
-        <li>Next.js</li>
-        <li>Tailwind CSS</li>
-        <li>Node.js</li>
-        <li>PostgreSQL</li>
-        <li>MYSQL</li>
+      <ul className="list-disc pl-2 flex gap-2 flex-col max-h-[200px] flex-wrap">
+        {skill.map((skill, index) => (
+          <li key={index}>{skill}</li>
+        ))}
       </ul>
     ),
   },
@@ -24,7 +37,9 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2 flex gap-2 flex-col">
-        <li>Chandigarh Group of Colleges: B.Tech CSE</li>
+        {education.map((education, index) => (
+          <li key={index}>{education}</li>
+        ))}
       </ul>
     ),
   },
