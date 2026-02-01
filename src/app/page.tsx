@@ -1,21 +1,29 @@
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import ProjectSection from "./components/ProjectSection";
-import EmailSection from "./components/EmailSection";
-import Footer from "./components/Footer";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Stats from "@/components/Stats";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
+    <main className="min-h-screen">
+      <LoadingScreen />
       <Navbar />
-      <div className="container mt-24 mx-auto px-12 py-4">
-         <HeroSection />
-        <AboutSection />
-        <ProjectSection />
-        <EmailSection />
-      </div>
+      <Hero />
+      <About />
+      <Stats />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Contact />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }
