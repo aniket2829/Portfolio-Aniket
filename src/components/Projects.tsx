@@ -105,8 +105,8 @@ export default function Projects() {
                                     ))}
                                 </div>
 
-                                {/* Action Links - visible on hover */}
-                                <div className="flex items-center gap-3 pt-3 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                {/* Action Links - always visible on mobile, hover on desktop */}
+                                <div className="flex items-center gap-3 pt-3 border-t border-white/10 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300">
                                     {project.liveUrl && (
                                         <a
                                             href={project.liveUrl}

@@ -43,7 +43,7 @@ export default function LoadingScreen() {
             {/* Logo/Name */}
             <div className="mb-8">
                 <h1 className="text-4xl md:text-5xl font-bold gradient-text animate-pulse">
-                    AS
+                    AD
                 </h1>
             </div>
 
